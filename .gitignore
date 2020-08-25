@@ -8,4 +8,4 @@ public/assets.json
 build/
 coverage/
 .env
-.vscode/
+# .vscode/

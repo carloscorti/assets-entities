@@ -6,7 +6,9 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "webpack": "webpack -wd",
-    "dev": "nodemon --exec babel-node lib/server.js"
+    "build-webpack": "webpack -p",
+    "dev": "nodemon --exec babel-node lib/server/server.js",
+    "build-node": "babel lib -d build --config-file ./babel-node.config.js --copy-files"
   },
   "author": "",
   "license": "ISC",
@@ -26,6 +28,7 @@
     "@babel/preset-react": "7.10.4",
     "@babel/runtime": "7.11.2",
     "assets-webpack-plugin": "5.1.1",
+    "axios": "0.20.0",
     "babel-loader": "8.1.0",
     "clean-webpack-plugin": "3.0.0",
     "css-loader": "4.2.2",
