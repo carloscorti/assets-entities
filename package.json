@@ -1,15 +1,21 @@
 {
   "name": "excelsense",
   "version": "1.0.0",
+  "private": "true",
+  "engines": {
+    "node": "12.18.3",
+    "npm": "6.14.6"
+  },
   "description": "",
-  "main": "index.js",
+  "main": "lib/server/server.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "webpack": "webpack -wd",
     "build-webpack": "webpack -p",
     "dev": "nodemon --exec babel-node lib/server/server.js",
     "build-node": "babel lib -d build --config-file ./babel-node.config.js --copy-files",
-    "start": "node build/server/server.js"
+    "heroku-postbuild": "npm run build-webpack && npm run build-node",
+    "start": "NODE_ENV=production pm2-runtime start build/server/server.js -i max --name appProd"
   },
   "author": "",
   "license": "ISC",
@@ -38,6 +44,7 @@
     "express": "4.17.1",
     "mini-css-extract-plugin": "0.10.0",
     "optimize-css-assets-webpack-plugin": "5.0.3",
+    "pm2": "4.4.1",
     "prop-types": "15.7.2",
     "react": "16.13.1",
     "react-dom": "16.13.1",
