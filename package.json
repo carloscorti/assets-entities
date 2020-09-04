@@ -9,7 +9,7 @@
   "description": "",
   "main": "lib/server/server.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
+    "test": "jest --watchAll",
     "webpack": "webpack -wd",
     "build-webpack": "webpack -p",
     "dev": "nodemon --exec babel-node lib/server/server.js",
@@ -21,9 +21,12 @@
   "license": "ISC",
   "devDependencies": {
     "babel-eslint": "10.1.0",
+    "enzyme": "3.11.0",
+    "enzyme-adapter-react-16": "1.15.4",
     "eslint": "7.7.0",
     "eslint-plugin-react": "7.20.6",
     "eslint-plugin-react-hooks": "4.1.0",
+    "jest": "26.4.2",
     "nodemon": "2.0.4"
   },
   "dependencies": {
